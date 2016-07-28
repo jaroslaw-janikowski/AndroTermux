@@ -3,7 +3,7 @@ APP_NAME = Test
 debug: compile make_apt sign_apt_debug
 
 compile:
-	aapt package -v -f -m -S ./res -J ./src -M ./AndroidManifest.xml -I $./lib/android.jar
+	aapt package -v -f -m -S ./res -J ./src -M ./AndroidManifest.xml -I ./lib/android.jar
 	jack --classpath ./lib/android.jar --output-dex ./obj --import-resource ./res ./src/ ./gen
 
 make_apt:
