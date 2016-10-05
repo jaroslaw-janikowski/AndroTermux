@@ -12,7 +12,7 @@ Goal of this project is to develop basic start project for developing Android ap
 4. Pick Android SDK version which you want to use to build this application by copying file android.jar from locations like:
   * Android SDK/platforms/android-10/android.jar
   * Android SDK/platforms/android-23/android.jar
-  and so on... to ./lib/ directory of this project.
+  * and so on... to ./lib/ directory of this project.
 5. Run build process with command:
   * make
 6. Your "Hello world" application should be waiting in bin/ directory.
