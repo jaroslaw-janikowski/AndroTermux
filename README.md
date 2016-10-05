@@ -14,7 +14,12 @@ Goal of this project is to develop basic start project for developing Android ap
   * Android SDK/platforms/android-23/android.jar
   * and so on... to ./lib/ directory of this project.
 5. Run build process with command:
-  * make to build debug version of APK package
-  * make release to build release version of APK package
-    * Please note that make release expects to find file release.keystore which should contain your release key for this package.
+  * *make* to build debug version of APK package
+  * *make release* to build release version of APK package
+    * Please note that *make release* expects to find file *release.keystore* which should contain your release key for this package.
 6. Your "Hello world" application should be waiting in ./bin/ directory.
+
+
+## Building APK on Linux PC
+
+This project can be built on Linux machine. To do this please edit and use makefile.linux_pc.
