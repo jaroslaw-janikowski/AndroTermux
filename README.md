@@ -6,7 +6,7 @@ Goal of this project is to develop basic start project for developing Android ap
 
 1. Install Termux on your phone.
 2. Install tools in your Termux:
-  * apt install jack make aapt git
+  * apt install jack make aapt git zip apksigner
 3. Clone this repository to your home dir:
   * git clone https://github.com/4544fa8d/AndroTermux.git
 4. Pick Android SDK version which you want to use to build this application by copying file android.jar from locations like:

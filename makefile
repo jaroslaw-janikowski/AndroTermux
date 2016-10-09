@@ -10,16 +10,17 @@ compile:
 
 make_apt:
 	aapt package -v -f -M ./AndroidManifest.xml -S ./res -I ./lib/android.jar -F ./bin/$(APP_NAME).unsigned.apk
-	jar -uf ./bin/$(APP_NAME).unsigned.apk -C ./obj classes.dex
+	cd obj
+	zip -u ../bin/$(APP_NAME).unsigned.apk classes.dex
+	cd ..
 
 sign_apt_debug:
-	jarsigner -verbose -keystore ./debug.keystore -storepass android -keypass android -signedjar ./bin/$(APP_NAME).signed.apk ./bin/$(APP_NAME).unsigned.apk AndroidDebugKey
+	# sign and align APK archive
+	apksigner -p android debug.keystore ./bin/$(APP_NAME).unsigned.apk./bin/$(APP_NAME).signed.apk
 
 sign_apt_release:
-	jarsigner -verbose -keystore ./release.keystore -storepass password -keypass password -signedjar ./bin/$(APP_NAME).signed.apk ./bin/$(APP_NAME).unsigned.apk AndroidTestKey
-
-align_apt:
-	zipalign -v -f 4 ./bin/$(APP_NAME).signed.apk ./bin/$(APP_NAME).apk
+	# sign and align APK archive
+	apksigner -p android release.keystore ./bin/$(APP_NAME).unsigned.apk./bin/$(APP_NAME).signed.apk
 
 clean:
 	rm -rf ./obj/*
