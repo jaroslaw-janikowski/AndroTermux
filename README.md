@@ -16,10 +16,16 @@ Goal of this project is to develop basic start project for developing Android ap
 5. Run build process with command:
   * *make* to build debug version of APK package
   * *make release* to build release version of APK package
-    * Please note that *make release* expects to find file *release.keystore* which should contain your release key for this package.
 6. Your "Hello world" application should be waiting in ./bin/ directory.
 
 
 ## Building APK on Linux PC
 
 This project can be built on Linux machine. To do this please edit and use makefile.linux_pc.
+
+
+## How to install your program
+
+By default you cant access your home directory in Termux. To be able to get your hands on your newly created program you must call *termux-setup-storage* (only once after installation of Termux on your phone). After this operation you now can access your phone storage through ~/storage path.
+
+Each time you build new version of your application you can copy it from ./bin folder of your project to ~/storage and install it from there on your phone.
